@@ -10,7 +10,7 @@ internal class Program
         head.next.next = new Node(3);
         head.next.next.next = new Node(4);
 
-        int pos = 3;
+        int pos = 1;
         int data = 9;
 
         Console.WriteLine($"\nBefore insert of value {data} at pos = {pos}");
@@ -28,26 +28,23 @@ internal class Program
     {
         Node temp = new Node(data);
 
-        if(head == null && pos == 1)
+        if(pos == 1)
         {
+            temp.next = head;
             return temp;
         }
 
         Node curr = head;
-
-        int x = 1;
-
-        while(curr.next != null && x < pos - 1)
+        
+        for(int i=1;i <= pos - 2 && curr != null; i++)
         {
             curr = curr.next;
-            x++;
         }
-
-        if(x != pos - 1)
+        
+        if(curr != null)
         {
             return head;
         }
-
 
         temp.next = curr.next;
         curr.next = temp;
