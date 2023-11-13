@@ -9,6 +9,7 @@ internal class Program
         head.next = new Node(20);
         head.next.next = new Node(30);
         head.next.next.next = new Node(40);
+        head.next.next.next.next = new Node(50); 
 
         //int data = 55;
 
@@ -16,7 +17,7 @@ internal class Program
         printLinkedList(head);
 
 
-        var value = getNthNodeFromEndOfLinkedList(head,5);
+        var value = getNthNodeFromEndOfLinkedList(head,3);
         Console.WriteLine($"\n{value}");
 
         //printLinkedList(head);
@@ -39,7 +40,7 @@ internal class Program
         }
 
         curr = head;
-        for(int i=0; i < count - n; i++)
+        for(int i=1; i < count - n + 1; i++) // start from first node of the the required position from end is len - pos + 1 th node data
         {
             curr = curr.next;
         }
