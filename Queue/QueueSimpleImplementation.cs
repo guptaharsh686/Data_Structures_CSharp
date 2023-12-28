@@ -60,6 +60,9 @@ public class Queue
             Console.WriteLine("Queue empty cannot dequeue!");
         }
         else{
+            for(int i=0; i<size-1;i++){
+                arr[i] = arr[i+1];
+            }
             size--;
         }
     }
