@@ -92,6 +92,9 @@ public class Queue{
         }
         else{
             front = front.next;
+            if(front == null){
+                rear = null;
+            }
             size--;
         }
     
