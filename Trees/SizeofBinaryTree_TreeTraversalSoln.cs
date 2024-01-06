@@ -1,3 +1,6 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
 using System;
 
 public class HelloWorld
@@ -14,12 +17,12 @@ public class HelloWorld
         root.right.right = new Node(60);
         
         Console.WriteLine("\n------------------- Size using Inorder Traversal---------------------\n");
-        Console.WriteLine("Size of Binary Tree = " + printInorder(root));
+        Console.WriteLine("Size of Binary Tree = " + getSize(root));
     }
     
-    public static int printInorder(Node root){
+    public static int getSize(Node root){
         if(root != null){
-            return 1 + printInorder(root.left) +  printInorder(root.right);
+            return 1 + getSize(root.left) +  getSize(root.right);
         }
         else{
             return 0;
